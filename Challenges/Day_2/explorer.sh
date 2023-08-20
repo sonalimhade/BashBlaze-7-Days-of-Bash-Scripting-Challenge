@@ -1,23 +1,28 @@
 #!/bin/bash
 
-# Part 1: File and Directory Exploration
-echo "Welcome to the Interactive File and Directory Explorer!"
+echo "Welcome to the interactive file and directory explorer!!!"
+
+# print files and directories presentand their size
+echo "Files and their size in human readable format:"
 
 while true; do
-    # List all files and directories in the current path
-    echo "Files and Directories in the Current Path:"
-    ls -lh
 
-    # Part 2: Character Counting
-    read -p "Enter a line of text (Press Enter without text to exit): " input
 
-    # Exit if the user enters an empty string
-    if [ -z "$input" ]; then
-        echo "Exiting the Interactive Explorer. Goodbye!"
-        break
-    fi
+        ls -lh
 
-    # Calculate and print the character count for the input line
-    char_count=$(echo -n "$input" | wc -m)
-    echo "Character Count: $char_count"
+        # Part 2: Character counting
+
+        #read a line of text from user until he enters an empty string
+
+        read -p "enter a line of text or string (Press enter key without text to exit)" input
+
+        if [ -z "$input" ]; then
+                echo "User has entered an empty string to exit"
+                break
+        fi
+
+
+        # Now count the no. of characters in the line of text entered by user"
+        char_count=$(echo -n "$input" | wc -m)
+        echo "The count of characters: $char_count"
 done
